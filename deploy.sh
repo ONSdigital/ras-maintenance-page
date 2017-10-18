@@ -12,13 +12,15 @@ if [ $1 == ${DEV_ENVIRONMENT} ]; then
   ENVIRONMENT=${DEV_ENVIRONMENT}
   DOMAIN="apps.devtest.onsclofo.uk"
   MAINTENANCE_APP="ras-maintenance-dev"
+  MAINTENANCE_URL="ras-maintenance-dev" # PUT IN AS MAY NOT BE THE SAME AS APP NAME IN DIFFERENT ENVIRONMENTS
   FRONTSTAGE_APP="ras-frontstage-dev"
-  FRONTSTAGE_URL="ras-frontstage-dev" #PUT IN AS MAY NOT BE THE SAME AS APP NAME IN DIFFERENT ENVIRONMENTS
+  FRONTSTAGE_URL="ras-frontstage-dev" # PUT IN AS MAY NOT BE THE SAME AS APP NAME IN DIFFERENT ENVIRONMENTS
   TESTING_URL="ras-frontstage-dev-testing"
 elif [ $1 == ${SIT_ENVIRONMENT} ]; then
   ENVIRONMENT=${SIT_ENVIRONMENT}
   DOMAIN="apps.devtest.onsclofo.uk"
   MAINTENANCE_APP="ras-maintenance-sit"
+  MAINTENANCE_URL="ras-maintenance-sit"
   FRONTSTAGE_APP="ras-frontstage-sit"
   FRONTSTAGE_URL="ras-frontstage-sit"
   TESTING_URL="ras-frontstage-sit-testing"
@@ -33,7 +35,6 @@ fi
 cf target -s ${ENVIRONMENT}
 
 # FIXME: Check that the testing url is sufficient, may need to be locked down to just have access within the ons domain
-# FIXME: Unmap the URL for the holding page once deployment finished?
 
 deploy_holding_page() {
  echo "pointing url to holding page & unmapping access to frontstage in $ENVIRONMENT environment"
@@ -51,6 +52,7 @@ undeploy_holding_page() {
  echo "dropping holding page & mapping access to frontstage in $ENVIRONMENT environment"
  cf map-route ${FRONTSTAGE_APP} ${DOMAIN} -n ${FRONTSTAGE_URL}
  cf unmap-route ${MAINTENANCE_APP} ${DOMAIN} -n ${FRONTSTAGE_URL}
+ cf unmap-route ${MAINTENANCE_APP} ${DOMAIN} -N ${MAINTENANCE_URL}
 }
 
 remove_testing_route() {

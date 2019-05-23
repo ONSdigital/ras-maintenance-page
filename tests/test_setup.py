@@ -12,4 +12,4 @@ class TestSetup(unittest.TestCase):
 
     def test_setup_being_created(self):
         test_app = create_app()
-        self.assertEqual(test_app.config['UNPLANNED_MAINTENANCE'], False)
+        self.assertEqual(test_app.config['MAINTENANCE_TEMPLATE'], None)

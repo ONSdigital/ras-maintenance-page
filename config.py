@@ -2,5 +2,5 @@ import os
 
 
 class Config(object):
-    UNPLANNED_MAINTENANCE = os.getenv('UNPLANNED_MAINTENANCE', False)
+    MAINTENANCE_TEMPLATE = os.getenv('MAINTENANCE_TEMPLATE')
     PORT = os.getenv('PORT', 8077)

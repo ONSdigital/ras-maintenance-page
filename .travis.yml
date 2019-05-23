@@ -12,6 +12,9 @@ install:
 script:
   - pipenv run pytest --cov-report term-missing --cov app --capture no
 
+after_success:
+  - pipenv run codecov
+
 branches:
   only:
     - master

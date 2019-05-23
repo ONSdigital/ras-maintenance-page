@@ -1,7 +1,38 @@
 # RAS-maintenance pages
 
-This project contains the static files used to display a site maintenance page. It uses a variable called `UNPLANNED_MAINTENANCE ` which determines which 
+This project contains the static files used to display the ras-frontstage site maintenance page. It uses a variable called `MAINTENANCE_TEMPLATE ` which determines which 
 maintenance page is shown.
+
+## Setup
+Install dependencies using the Makefile:
+```bash
+make build
+```
+Alternatively install dependencies by using pipenv:
+
+```bash
+pipenv install --dev
+```
+
+## Run the application
+Run with Makefile:
+```bash
+make start
+```
+Alternatively run manually with:
+```bash
+pipenv run python run.py
+```
+
+## Testing
+To run tests with Makefile:
+```bash
+make test
+```
+Alternatively you can run it manually:
+```bash
+pipenv run pytest tests
+```
 
 # Blue green deployment
 

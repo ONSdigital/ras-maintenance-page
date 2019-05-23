@@ -1,9 +1,9 @@
-This project contains the static files used to display a site maintenance page.
+# RAS-maintenance pages
 
-The project contains a Staticfile, this allows the project to be cf pushed to Cloud Foundry where it will run in an nginx static buildpack container.
+This project contains the static files used to display a site maintenance page. It uses a variable called `UNPLANNED_MAINTENANCE ` which determines which 
+maintenance page is shown.
 
-
-#Blue green deployment
+# Blue green deployment
 
 To route calls from frontstage to the holding page run
 

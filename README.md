@@ -1,9 +1,40 @@
-This project contains the static files used to display a site maintenance page.
+# RAS-maintenance pages
 
-The project contains a Staticfile, this allows the project to be cf pushed to Cloud Foundry where it will run in an nginx static buildpack container.
+This project contains the static files used to display the ras-frontstage site maintenance page. It uses a variable called `MAINTENANCE_TEMPLATE ` which determines which 
+maintenance page is shown.
 
+## Setup
+Install dependencies using the Makefile:
+```bash
+make build
+```
+Alternatively install dependencies by using pipenv:
 
-#Blue green deployment
+```bash
+pipenv install --dev
+```
+
+## Run the application
+Run with Makefile:
+```bash
+make start
+```
+Alternatively run manually with:
+```bash
+pipenv run python run.py
+```
+
+## Testing
+To run tests with Makefile:
+```bash
+make test
+```
+Alternatively you can run it manually:
+```bash
+pipenv run pytest tests
+```
+
+# Blue green deployment
 
 To route calls from frontstage to the holding page run
 

@@ -1,0 +1,101 @@
+{%- set DS_VERSION='8.0.1' -%}
+<!doctype html>
+<html dir="ltr" lang="en-gb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
+        <title>{% block title %}{% endblock %} - ONS Business Surveys - Office for National Statistics (ONS)</title>
+        <meta name="description" content="ONS Business Surveys">
+        <link rel="stylesheet" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/css/main.css">
+        <script src="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/js/main.js"></script>
+        <meta name="msapplication-config" content="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/browserconfig.json"> 
+        <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico"> 
+        <link rel="icon" type="image/png" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/favicon-32x32.png" sizes="32x32"> 
+        <link rel="icon" type="image/png" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/favicon-16x16.png" sizes="16x16"> 
+        <link rel="mask-icon" color="#5bbad5" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/safari-pinned-tab.svg"> 
+        <link rel="apple-touch-icon" type="image/png" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/apple-touch-icon.png" sizes="180x180"> 
+        <link rel="manifest" href="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/favicons/manifest.json">
+    </head>
+    <body>
+        <div class="page account">
+            <div class="page__content">
+                <div class="skip">
+                    <a class="skip__link" href="#main">Skip to content</a>
+                </div>
+                <header class="header ">
+                        <div class="header__top" role="banner">
+                          <div class=" container">
+                            <div class="header__grid-top grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                              <div class="grid__col col-auto">
+                                <div class="logo">
+                                  <a href="#">
+                                    <img src="https://cdn.ons.gov.uk/sdc/design-system/{{ DS_VERSION }}/img/ons-logo-pos-en.svg" alt="Office for National Statistics logo" class="logo__img header__logo">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="header__main">
+                          <div class="container">
+                            <div class="grid grid--gutterless grid--flex grid--between grid--vertical-center grid--no-wrap">
+                              <div class="grid__col col-auto u-flex-shrink">
+                                <div class="header__title">ONS Business Surveys</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </header>
+                <div class="page__subheader">
+                    <div class="container page__container">
+                        {% block main %}{% endblock %}
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container">
+                        <div class="grid">
+                            <div class="grid__col col-4@m">
+                                <div class="u-fs-r--b footer__heading">
+                                    <h3>Legal information</h3>
+                                </div>
+                                <ul class="list list--bare u-mb-no">
+                                    <li class="list__item">
+                                        <a href="https://www.ons.gov.uk/help/termsandconditions">Terms and conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid__col col-4@m">
+                                <div class="u-fs-r--b footer__heading">
+                                    <h3>About ONS</h3>
+                                </div>
+                                <ul class="list list--bare u-mb-no">
+                                    <li class="list__item">
+                                        <a href="https://www.ons.gov.uk/aboutus/whatwedo">What we do</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="https://www.ons.gov.uk/help/accessibility">Accessibility</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid__col col-4@m">
+                                <div class="u-fs-r--b footer__heading">
+                                    <h3>Statistics</h3>
+                                </div>
+                                <ul class="list list--bare u-mb-no">
+                                    <li class="list__item">
+                                        <a href="https://www.statisticsauthority.gov.uk/about-the-authority/">UK Statistics Authority</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="https://www.ons.gov.uk/releasecalendar">Release calendar</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="https://www.ons.gov.uk/news">News</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

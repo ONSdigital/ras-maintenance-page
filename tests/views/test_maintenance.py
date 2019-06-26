@@ -21,7 +21,7 @@ class TestMaintenance(unittest.TestCase):
         Config.MAINTENANCE_TEMPLATE = 'UNPLANNED_MAINTENANCE'
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertTrue('Unplanned downtime'.encode() in response.data)
+        self.assertTrue('Service Unavailable'.encode() in response.data)
 
 
 

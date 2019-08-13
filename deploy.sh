@@ -43,7 +43,7 @@ elif [ $1 == ${PROD_ENVIRONMENT} ]; then
   FRONTSTAGE_URL="surveys.ons.gov.uk"
   TESTING_URL="ras-frontstage-prod-testing"
 else
-  echo "Unknown environment, currently script only supports: $DEV_ENVIRONMENT"
+  echo "Unknown environment, currently script only supports: $DEV_ENVIRONMENT, $SIT_ENVIRONMENT, $PREPROD_ENVIRONMENT and $PROD_ENVIRONMENT"
   exit 1
 fi
 

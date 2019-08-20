@@ -8,7 +8,7 @@ MAINTENANCE_TEMPLATES = {"UNPLANNED_MAINTENANCE": "src/unplanned-maintenance.htm
                          "SERVICE_UNAVAILABLE": "src/service-unavailable.html"}
 
 
-# Lots of options as a temporary fill in.
+# Hardcode the most common routes until we find a wildcard solution
 @maintenance_blueprint.route('/')
 @maintenance_blueprint.route('/sign-in')
 @maintenance_blueprint.route('/sign-in/')

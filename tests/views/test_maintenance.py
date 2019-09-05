@@ -17,6 +17,11 @@ class TestMaintenance(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue('Service temporarily unavailable'.encode() in response.data)
 
+    def test_get_maintenance_page_with_other_route(self):
+        response = self.client.get('/hfkjsdkjsdhjdfkjs/sdflkjshfdkj/skdjf')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('Service temporarily unavailable'.encode() in response.data)
+
     def test_get_unplanned_maintenance_page(self):
         Config.MAINTENANCE_TEMPLATE = 'UNPLANNED_MAINTENANCE'
         response = self.client.get('/')

@@ -5,27 +5,27 @@ if [[ $# -ne 2 ]]; then
   exit 1
 fi
 
-DEV_ENVIRONMENT="dev"
-SIT_ENVIRONMENT="sit"
+PREPROD_ENVIRONMENT="preprod"
+PROD_ENVIRONMENT="prod"
 
-if [ $1 == ${DEV_ENVIRONMENT} ]; then
-  ENVIRONMENT=${DEV_ENVIRONMENT}
-  DOMAIN="apps.devtest.onsclofo.uk"
-  MAINTENANCE_APP="ras-maintenance-dev"
-  MAINTENANCE_URL="ras-maintenance-dev" # PUT IN AS MAY NOT BE THE SAME AS APP NAME IN DIFFERENT ENVIRONMENTS
-  FRONTSTAGE_APP="ras-frontstage-dev"
-  FRONTSTAGE_URL="ras-frontstage-dev" # PUT IN AS MAY NOT BE THE SAME AS APP NAME IN DIFFERENT ENVIRONMENTS
-  TESTING_URL="ras-frontstage-dev-testing"
-elif [ $1 == ${SIT_ENVIRONMENT} ]; then
-  ENVIRONMENT=${SIT_ENVIRONMENT}
-  DOMAIN="apps.devtest.onsclofo.uk"
-  MAINTENANCE_APP="ras-maintenance-sit"
-  MAINTENANCE_URL="ras-maintenance-sit"
-  FRONTSTAGE_APP="ras-frontstage-sit"
-  FRONTSTAGE_URL="ras-frontstage-sit"
-  TESTING_URL="ras-frontstage-sit-testing"
+if [ $1 == ${PREPROD_ENVIRONMENT} ]; then
+  ENVIRONMENT=${PREPROD_ENVIRONMENT}
+  DOMAIN="apps.prod.cf5.onsclofo.uk"
+  MAINTENANCE_APP="ras-maintenance-preprod"
+  MAINTENANCE_URL="ras-maintenance-preprod"
+  FRONTSTAGE_APP="ras-frontstage-preprod"
+  FRONTSTAGE_URL="surveys.onsdigital.uk"
+  TESTING_URL="ras-frontstage-preprod-testing"
+elif [ $1 == ${PROD_ENVIRONMENT} ]; then
+  ENVIRONMENT=${PROD_ENVIRONMENT}
+  DOMAIN="apps.prod.cf5.onsclofo.uk"
+  MAINTENANCE_APP="ras-maintenance-prod"
+  MAINTENANCE_URL="ras-maintenance-prod"
+  FRONTSTAGE_APP="ras-frontstage-prod"
+  FRONTSTAGE_URL="surveys.ons.gov.uk"
+  TESTING_URL="ras-frontstage-prod-testing"
 else
-  echo "Unknown environment, currently script only supports: $DEV_ENVIRONMENT"
+  echo "Unknown environment, currently script only supports: $PREPROD_ENVIRONMENT and $PROD_ENVIRONMENT"
   exit 1
 fi
 
